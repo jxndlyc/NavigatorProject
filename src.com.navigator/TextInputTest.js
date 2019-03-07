@@ -4,6 +4,7 @@ import {
     View,
     TouchableOpacity,
     TextInput,
+    StyleSheet,
 } from 'react-native';
 
 export default class TextInputTest extends Component<Props> {
@@ -38,11 +39,44 @@ export default class TextInputTest extends Component<Props> {
                 <Text style={{padding: 10, fontSize: 42}}>
                     {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
                 </Text>
-                <Text style={{padding: 10, fontSize: 42}}>
+                <Text style={styles.titleBase}>
                     {this.state.text}
+                </Text>
+                <Text style={{flexDirection:'column'}}>
+                    <Text>One Test </Text>
+                    <Text>Second Test</Text>
                 </Text>
             </View>
 
         );
     }
+
+
 }
+
+const styles = StyleSheet.create({
+    titleBase: {
+        margin: 10,
+        textAlign: 'center',
+        color: 'red',
+        fontSize: 28,
+        fontFamily: 'Cochin',
+        fontStyle:'italic',
+        fontWeight:'bold',
+        //textShadowOffset: {width: 30, height: 30},
+        //textShadowColor: 'green',
+        //textShadowRadius: 10,
+        //letterSpacing: 100,
+        //lineHeight: 50,
+        //textDecorationLine: 'underline',
+        //textDecorationStyle: 'dashed',
+        //textDecorationColor: 'blue',
+        //writingDirection: 'rtl',
+        flexDirection:'column',
+
+    },
+    title: {
+        color: 'green',
+        fontWeight: 'bold',
+    },
+});
