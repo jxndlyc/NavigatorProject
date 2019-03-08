@@ -9,7 +9,7 @@ import {
 
 export default class ScrollViewTest extends Component<Props> {
     static navigationOptions = {    //上标题
-        title: 'ScrollViewTest',
+        title: 'ScrollView',
     };
 
     render() {

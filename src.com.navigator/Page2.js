@@ -4,8 +4,22 @@ import {
     View,
     TouchableOpacity,
     ListView,
-    Image
+    Image,
+    StyleSheet,
 } from 'react-native';
+
+var THUMB_URLS = [
+    require('./img/one.png'),
+    require('./img/two.png'),
+    require('./img/three.png'),
+    require('./img/four.png'),
+    require('./img/five.png'),
+    require('./img/six.png'),
+    require('./img/seven.png'),
+    require('./img/eight.png'),
+    require('./img/nine.png'),
+    require('./img/ten.png'),
+];
 
 export default class Page2 extends Component<Props> {
 
@@ -19,6 +33,22 @@ export default class Page2 extends Component<Props> {
             ])
         };
     }
+
+    _renderRow(rowData: string, sectionID: number, rowID: number) {
+        var imgSource = THUMB_URLS[rowID];
+        return (
+            <TouchableOpacity>
+                <View>
+                    <View style={styles.row}>
+                        <Image style={styles.thumb} source={imgSource}/>
+                        <Text style={{flex: 1, fontSize: 16, color: 'blue'}}>
+                            {rowData + '我是测试行号哦~'}
+                        </Text>
+                    </View>
+                </View>
+            </TouchableOpacity>
+        );
+    };
 
     static navigationOptions = {    //上标题
         title: '第二页',
@@ -146,7 +176,8 @@ export default class Page2 extends Component<Props> {
 
                 <ListView
                     dataSource={this.state.dataSource}
-                    renderRow={(rowData) => <Text>{rowData}</Text>}
+                    //renderRow={(rowData) => <Text>{rowData}</Text>}
+                    renderRow={this._renderRow}
                 />
 
             </View>
@@ -154,3 +185,16 @@ export default class Page2 extends Component<Props> {
         );
     }
 }
+
+var styles = StyleSheet.create({
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        padding: 10,
+        backgroundColor: '#F6F6F6',
+    },
+    thumb: {
+        width: 50,
+        height: 50,
+    },
+});
