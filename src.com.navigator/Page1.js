@@ -6,7 +6,6 @@ import {
     WebView,
 } from 'react-native';
 
-var DEFAULT_URL = 'http://baidu.com/';
 
 export default class Page1 extends Component<Props> {
     static navigationOptions = {    //上标题

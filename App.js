@@ -35,6 +35,9 @@ import SegmentedControlIOSScreen from './src.com.navigator/SegmentedControlIOSTe
 import TimePickerAndroidScreen from './src.com.navigator/TimePickerAndroidTest.js';
 import ModalScreen from './src.com.navigator/ModalTest.js';
 import ProgressBarAndroidScreen from './src.com.navigator/ProgressBarAndroidTest.js';
+import ToastAndroidScreen from './src.com.navigator/ToastAndroidTest.js';
+import AlertScreen from './src.com.navigator/AlertTest.js';
+import NetInfoScreen from './src.com.navigator/NetInfoTest.js';
 
 class HomeScreen extends React.Component {
     static navigationOptions = {
@@ -150,6 +153,27 @@ class HomeScreen extends React.Component {
                         title="ModalTest"
                     />
 
+                    <Text style={{height: 10, marginTop: 20, marginLeft: 50}}></Text>
+                    <Button
+                        style={{marginTop: 10, marginLeft: 50}}
+                        onPress={() => navigate('ToastAndroidTest')}
+                        title="ToastAndroidTest"
+                    />
+
+                    <Text style={{height: 10, marginTop: 20, marginLeft: 50}}></Text>
+                    <Button
+                        style={{marginTop: 10, marginLeft: 50}}
+                        onPress={() => navigate('AlertTest')}
+                        title="AlertTest"
+                    />
+
+                    <Text style={{height: 10, marginTop: 20, marginLeft: 50}}></Text>
+                    <Button
+                        style={{marginTop: 10, marginLeft: 50}}
+                        onPress={() => navigate('NetInfoTest')}
+                        title="NetInfoTest"
+                    />
+
 
                     <View style={{height:Platform.OS == 'ios' ? 0:30,}}></View>
                 </ScrollView>
@@ -201,6 +225,9 @@ const NavigatorProject = createStackNavigator({
     TimePickerAndroidTest: {screen: TimePickerAndroidScreen},
     ModalTest: {screen: ModalScreen},
     ProgressBarAndroidTest: {screen: ProgressBarAndroidScreen},
+    ToastAndroidTest: {screen: ToastAndroidScreen},
+    AlertTest: {screen: AlertScreen},
+    NetInfoTest: {screen: NetInfoScreen},
 });
 
 //AppRegistry.registerComponent('NavigatorProject', () => NavigatorProject);
