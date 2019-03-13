@@ -38,6 +38,7 @@ import ProgressBarAndroidScreen from './src.com.navigator/ProgressBarAndroidTest
 import ToastAndroidScreen from './src.com.navigator/ToastAndroidTest.js';
 import AlertScreen from './src.com.navigator/AlertTest.js';
 import NetInfoScreen from './src.com.navigator/NetInfoTest.js';
+import AsyncStorageScreen from './src.com.navigator/AsyncStorageTest.js';
 
 class HomeScreen extends React.Component {
     static navigationOptions = {
@@ -174,6 +175,13 @@ class HomeScreen extends React.Component {
                         title="NetInfoTest"
                     />
 
+                    <Text style={{height: 10, marginTop: 20, marginLeft: 50}}></Text>
+                    <Button
+                        style={{marginTop: 10, marginLeft: 50}}
+                        onPress={() => navigate('AsyncStorageTest')}
+                        title="AsyncStorageTest"
+                    />
+
 
                     <View style={{height:Platform.OS == 'ios' ? 0:30,}}></View>
                 </ScrollView>
@@ -228,6 +236,7 @@ const NavigatorProject = createStackNavigator({
     ToastAndroidTest: {screen: ToastAndroidScreen},
     AlertTest: {screen: AlertScreen},
     NetInfoTest: {screen: NetInfoScreen},
+    AsyncStorageTest: {screen: AsyncStorageScreen},
 });
 
 //AppRegistry.registerComponent('NavigatorProject', () => NavigatorProject);
